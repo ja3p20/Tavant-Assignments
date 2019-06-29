@@ -1,0 +1,23 @@
+Download the tar file
+
+extract it using> tar -zxvf eclipse.XX.YY.tar.gz
+
+move the file to /opt> sudo mv eclipse.XX.YY /opt
+
+create a desktop icon install> sudo apt-get install --no-install-recommends gnome-panel
+
+goto desktop> gnome-desktop-item-edit --create-new ~/Desktop
+
+A launcher will appear> Type the following things
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_IN]=/opt/eclipse-installer/icon.xpm
+Name[en_IN]=Eclipse IDE
+Comment[en_IN]=IDE
+Exec=/opt/eclipse-installer/eclipse-inst
+Name=Eclipse IDE
+Comment=IDE
+Icon=/opt/eclipse-installer/icon.xpm
