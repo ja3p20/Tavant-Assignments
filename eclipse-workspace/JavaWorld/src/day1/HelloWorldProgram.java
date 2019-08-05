@@ -1,6 +1,6 @@
 package day1;
 
-public class HelloWorldprog {
+public class HelloWorldProgram {
 	public static String getMessage() {
         String str = "Hello World";
 		return str;

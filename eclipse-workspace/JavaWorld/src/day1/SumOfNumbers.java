@@ -1,13 +1,20 @@
 package day1;
 
+import java.util.Scanner;
+
 public class SumOfNumbers {
 
 	public static void main(String[] args) {
-		int start = 6;
-		int end = 15;
-		
-		sumOfOddNumbers(start,end);
+		//int start = 6;
+		//int end = 15;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter start of range");
+		int start = scanner.nextInt();
+		System.out.println("Enter end of range");
+		int end = scanner.nextInt();
 		sumOfEvenNumbers(start,end);
+		sumOfOddNumbers(start,end);
+		scanner.close();
 	}
 
 	static int sumOfOddNumbers(int start, int end) {
@@ -17,7 +24,7 @@ public class SumOfNumbers {
 			//System.out.println(i);
 			sum += i;
 		}
-		System.out.println("sum of odd number in the range is " + sum);
+		System.out.println("Sum of odd number in the given range is " + sum);
 		return sum;
 	}
 
@@ -28,7 +35,7 @@ public class SumOfNumbers {
 			//System.out.println(i);
 			sum+=i;
 		}
-		System.out.println("sum of even number in the range is " + sum);
+		System.out.println("Sum of even number in the given range is " + sum);
 		return sum;
 	}
 

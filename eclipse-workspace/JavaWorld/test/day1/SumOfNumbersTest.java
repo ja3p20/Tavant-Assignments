@@ -18,5 +18,27 @@ class SumOfNumbersTest {
 		int expected = 50;
 		assertEquals(actual,expected);
 	}
+	@Test
+	void test3() {
+		int actual = SumOfNumbers.sumOfEvenNumbers(-10,15);
+		int expected = 26;
+		assertEquals(actual,expected);
+	}@Test
+	void test4() {
+		int actual = SumOfNumbers.sumOfOddNumbers(-10,15);
+		int expected = 39;
+		assertEquals(actual,expected);
+	}
+	@Test
+	void test5() {
+		int actual = SumOfNumbers.sumOfEvenNumbers(-4,-1);
+		int expected = -6;
+		assertEquals(actual,expected);
+	}@Test
+	void test6() {
+		int actual = SumOfNumbers.sumOfOddNumbers(-4,-1);
+		int expected = -4;
+		assertEquals(actual,expected);
+	}
 
 }

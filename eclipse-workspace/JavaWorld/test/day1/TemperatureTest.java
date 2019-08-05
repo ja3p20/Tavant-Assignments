@@ -21,6 +21,19 @@ class TemperatureTest {
 		//double expected2 = sc.nextDouble();
 		Double actual2 = Temperature.convertToCelsius(212.0);
 		assertEquals(actual2,expected2);
-		
+	}
+	@Test
+	void test3() {
+		Double expected2 = -67.5;
+		//double expected2 = sc.nextDouble();
+		Double actual2 = Temperature.convertToCelsius(-89.5);
+		assertEquals(actual2,expected2);
+	}
+	@Test
+	void test4() {
+		Double expected2 = 94.28;
+		//double expected2 = sc.nextDouble();
+		Double actual2 = Temperature.convertToFahrenheit(34.6);
+		assertEquals(actual2,expected2);
 	}
 }

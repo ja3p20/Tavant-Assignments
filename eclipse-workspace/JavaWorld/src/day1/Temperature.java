@@ -1,28 +1,29 @@
 package day1;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Temperature {
-
 	public static void main(String[] args) {
 		//Double degtemp = (double) 100.0;
 		//Double fahrentemp = (double) 212;
-		Scanner sc =  new Scanner(System.in);
-		System.out.println("Enter the temp in degree celcius");
-		double degtemp1 = sc.nextDouble();
-		System.out.println("Enter the temp in fahrenheit");
-		double fahrentemp1 = sc.nextDouble();
-		System.out.println(degtemp1 + " degree to fahrenheit = " + convertToFahrenheit(degtemp1));
-		System.out.println(fahrentemp1 + " fahrenheit to celsius = " + convertToCelsius(fahrentemp1));
-		sc.close();
-
+		Scanner scanner =  new Scanner(System.in);
+		System.out.println("Enter the temperature in degree celcius");
+		double celsius = scanner.nextDouble();
+		System.out.println("Enter the temperature in fahrenheit");
+		double fahrenheit = scanner.nextDouble();
+		DecimalFormat decimalformat = new DecimalFormat("0.0"); 
+		System.out.println(celsius + " degree to fahrenheit = " + decimalformat.format(convertToFahrenheit(celsius)));
+		System.out.println(fahrenheit + " fahrenheit to celsius = " + decimalformat.format(convertToCelsius(fahrenheit)));
+		scanner.close();
 	}
-	public static Double convertToFahrenheit(Double degtemp){
-		Double farenheit = 9 * (degtemp / 5) +32; 
-		return farenheit; 
+	public static Double convertToFahrenheit(Double celsius){
+		double fahrenheit = 9 * (celsius / 5) +32; 
+		
+		return fahrenheit; 
 	}
-	public static Double convertToCelsius(Double fahrentemp){
-		Double celsius = (fahrentemp -32) * 5/9;
+	public static Double convertToCelsius(Double fahrenheit){
+		Double celsius = (fahrenheit -32) * 5/9;
 		return celsius; 
 	}
 }
