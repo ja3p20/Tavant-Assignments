@@ -8,7 +8,8 @@ class HelloWorldProgramTest {
 
 	@Test
 	void test() {
-		String actual = HelloWorldProgram.getMessage();
+		HelloWorldProgram hwobj = new HelloWorldProgram();
+		String actual = hwobj.getMessage();
 		String expected = "Hello World";
 		assertEquals(actual,expected);
 	}

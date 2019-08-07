@@ -38,8 +38,8 @@ public class MarkValidator {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter your marks out of hundred");
 		int mark = scanner.nextInt();
-		MarkValidator mvobj = new MarkValidator();
-		mvobj.isPass(mark);
+		MarkValidator mvobject = new MarkValidator();
+		mvobject.isPass(mark);
 		scanner.close();
 	}
 

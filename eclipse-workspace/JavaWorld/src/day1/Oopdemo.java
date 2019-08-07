@@ -4,25 +4,25 @@ class Car {
 	int numOfWheels;
 	String bodytype;
 	
-	void changeGear() {}
-	void applybrakes() {}
-	void applynitros() {}
+	public void changeGear() {}
+	public void applybrakes() {}
+	public void applynitros() {}
 }
 class Mobile{
 	float ramsize;
 	String body;
 	String OSname;
 	
-	void call() {}
-	void disconnect() {}
-	boolean isEarphoneAttached() {
+	public void call() {}
+	public void disconnect() {}
+	public boolean isEarphoneAttached() {
 		return false;
 	}
 }
 class Cat{
 	String name;
 	int age;
-	void playtime() {}
+	public void playtime() {}
 	
 }
 public class Oopdemo {
@@ -33,7 +33,6 @@ public class Oopdemo {
 		Mobile mobobj1 = new Mobile();
 		Mobile mobobj2 = new Mobile();
 		Cat catobj = new Cat();
-		//Cat catobj2 = new Cat();
 		
 		carobj1.applybrakes();
 		carobj2.changeGear();

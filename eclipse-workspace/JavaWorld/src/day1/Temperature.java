@@ -12,17 +12,18 @@ public class Temperature {
 		double celsius = scanner.nextDouble();
 		System.out.println("Enter the temperature in fahrenheit");
 		double fahrenheit = scanner.nextDouble();
-		DecimalFormat decimalformat = new DecimalFormat("0.0"); 
-		System.out.println(celsius + " degree to fahrenheit = " + decimalformat.format(convertToFahrenheit(celsius)));
-		System.out.println(fahrenheit + " fahrenheit to celsius = " + decimalformat.format(convertToCelsius(fahrenheit)));
+		DecimalFormat decimalformat = new DecimalFormat("0.0");
+		Temperature tempobject = new Temperature();
+		System.out.println(celsius + " degree to fahrenheit = " + decimalformat.format(tempobject.convertToFahrenheit(celsius)));
+		System.out.println(fahrenheit + " fahrenheit to celsius = " + decimalformat.format(tempobject.convertToCelsius(fahrenheit)));
 		scanner.close();
 	}
-	public static Double convertToFahrenheit(Double celsius){
+	public Double convertToFahrenheit(Double celsius){
 		double fahrenheit = 9 * (celsius / 5) +32; 
 		
 		return fahrenheit; 
 	}
-	public static Double convertToCelsius(Double fahrenheit){
+	public Double convertToCelsius(Double fahrenheit){
 		Double celsius = (fahrenheit -32) * 5/9;
 		return celsius; 
 	}

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MarkValidatorSwitchCase {
 
-	public static String markGrade(int mark)
+	public String markGrade(int mark)
 	{
 		if (mark >= 0 && mark <=100) {
 			for(int i=1;i<=4;i++)
@@ -31,7 +31,8 @@ public class MarkValidatorSwitchCase {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter your marks");
 		int mark = scanner.nextInt();
-		System.out.println(markGrade(mark));
+		MarkValidatorSwitchCase mvobject = new MarkValidatorSwitchCase();
+		System.out.println(mvobject.markGrade(mark));
 		scanner.close();
 	}
 
