@@ -7,33 +7,33 @@ import org.junit.jupiter.api.Test;
 class TemperatureTest {
 
 	@Test
-	void test() {
+	void testConvert100degreesCelciusToFarenheit() {
+		Double expectedFahrenheit = 212.0;
+		Temperature temperature = new Temperature();
+		Double actualFahrenheit = temperature.convertToFahrenheit(100.0);
+		assertEquals(actualFahrenheit,expectedFahrenheit);
 		
-		Double expected = 212.0;
-		Temperature tempobject = new Temperature();
-		Double actual = tempobject.convertToFahrenheit(100.0);
-		assertEquals(actual,expected);
-		
 	}
 	@Test
-	void test2() {
-		Double expected = 100.0;
-		Temperature tempobject = new Temperature();
-		Double actual = tempobject.convertToCelsius(212.0);
-		assertEquals(actual,expected);
+	void testConvert212degreesFarenheitToCelcius() {
+		Double expectedCelsius = 100.0;
+		Temperature temperature = new Temperature();
+		Double actualCelsius = temperature.convertToCelsius(212.0);
+		assertEquals(actualCelsius,expectedCelsius);
 	}
 	@Test
-	void test3() {
-		Double expected = -67.5;
-		Temperature tempobject = new Temperature();
-		Double actual = tempobject.convertToCelsius(-89.5);
-		assertEquals(actual,expected);
+	void testConvertNegativedegreesCelciusToFarenheit() {
+		Double expectedFahrenheit = -22.0;
+		Temperature temperature = new Temperature();
+		Double actualFahrenheit = temperature.convertToFahrenheit(-30.0);
+		assertEquals(actualFahrenheit,expectedFahrenheit);
 	}
 	@Test
-	void test4() {
-		Double expected = 94.28;
-		Temperature tempobject = new Temperature();
-		Double actual = tempobject.convertToFahrenheit(34.6);
-		assertEquals(actual,expected);
+	void testConvertNegativedegreesFarenheitToCelsius() {
+		Double expectedCelsius = -67.5;
+		Temperature temperature = new Temperature();
+		Double actualCelsius = temperature.convertToCelsius(-89.5);
+		assertEquals(actualCelsius,expectedCelsius);
 	}
-}
+	
+} 

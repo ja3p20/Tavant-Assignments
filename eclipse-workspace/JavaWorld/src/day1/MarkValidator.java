@@ -4,43 +4,37 @@ import java.util.Scanner;
 
 public class MarkValidator {
 
-	public String markGrade(int mark) {
-		String grade="";
-		if (mark >= 90 && mark <=100) {
-			grade = "A";
-		} else if (mark >= 75 && mark <90) {
-			grade = "B";
-		} else if (mark >= 60 && mark <75) {
-			grade = "C";
-		} else {
-			grade = "D";
-		}
-		System.out.println(grade);
-		return grade;
+	public boolean isPass(int mark) {
+		return mark >= 40 ? true : false;
+		
 	}
 	
-	public String isPass(int mark) {
-		String result="";
-		if (mark >= 40 && mark <=100) {
-			result = "Pass";
-			markGrade(mark);
-		} else if (mark >= 0  && mark <40){
-			result = "Fail";
-			markGrade(mark);
+	public String markGrade(int mark) {
+		if (mark>=0 && mark <=100) {
+			if (isPass(mark)) {
+				if (mark > 90)
+					return "Grade A";
+				if (mark > 75)
+					return "Grade B";
+				if (mark > 60)
+					return "Grade C";
+				return "Grade D";
+			}
+			return "Fail";
 		}
-		else {
-			result = "Please enter valid marks";
-		}
-		System.out.println(result);
-		return result;
+		return "Enter Valid Marks to Calculate Grade";
+		
 	}
-	public static void main(String args[]) {
+	
+	public static void main(String[] args) {
+		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter your marks out of hundred");
 		int mark = scanner.nextInt();
-		MarkValidator mvobject = new MarkValidator();
-		mvobject.isPass(mark);
+		MarkValidator markValidator = new MarkValidator();
+		markValidator.isPass(mark);
+		System.out.println(markValidator.markGrade(mark));
 		scanner.close();
+		
 	}
-
 }

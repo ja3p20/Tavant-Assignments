@@ -1,4 +1,5 @@
 eclipse-workspace/.metadata/*
+eclipse-workspace/.sonarlint
 eclipse-workspace/JavaWorld/.settings/
 eclipse-workspace/JavaWorld/bin/day1/
 eclipse-workspace/JavaWorld/.classpath

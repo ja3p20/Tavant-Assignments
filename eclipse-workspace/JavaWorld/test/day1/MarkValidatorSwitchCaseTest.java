@@ -7,32 +7,33 @@ import org.junit.jupiter.api.Test;
 class MarkValidatorSwitchCaseTest {
 
 	@Test
-	void test() {
-		MarkValidatorSwitchCase mvobject = new MarkValidatorSwitchCase();
-		String actual = mvobject.markGrade(60);
-		String expected = "Grade C";
+	void testFor60Marks() {
+		MarkValidatorSwitchCase markValidatorSwitchCase = new MarkValidatorSwitchCase();
+		String actual = markValidatorSwitchCase.markGrade(60);
+		String expected = "Grade D";
 		assertEquals(actual,expected);
 	}
 	
 	@Test
-	void test2() {
-		MarkValidatorSwitchCase mvobject = new MarkValidatorSwitchCase();
-		String actual = mvobject.markGrade(85);
+	void testFor85Marks() {
+		MarkValidatorSwitchCase markValidatorSwitchCase = new MarkValidatorSwitchCase();
+		String actual = markValidatorSwitchCase.markGrade(85);
 		String expected = "Grade B";
 		assertEquals(actual,expected);
 	}
 	@Test
-	void test3() {
-		MarkValidatorSwitchCase mvobject = new MarkValidatorSwitchCase();
-		String actual = mvobject.markGrade(-29);
+	void testForNegativeMarks() {
+		MarkValidatorSwitchCase markValidatorSwitchCase = new MarkValidatorSwitchCase();
+		String actual = markValidatorSwitchCase.markGrade(-29);
 		String expected = "Enter valid marks";
 		assertEquals(actual,expected);
 	}
 	@Test
-	void test4() {
-		MarkValidatorSwitchCase mvobject = new MarkValidatorSwitchCase();
-		String actual = mvobject.markGrade(239);
+	void testForMarksGreaterThan100() {
+		MarkValidatorSwitchCase markValidatorSwitchCase = new MarkValidatorSwitchCase();
+		String actual = markValidatorSwitchCase.markGrade(239);
 		String expected = "Enter valid marks";
 		assertEquals(actual,expected);
 	}
+	
 }

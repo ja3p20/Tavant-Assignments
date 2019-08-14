@@ -7,31 +7,65 @@ import org.junit.jupiter.api.Test;
 class MarkValidatorTest {
 	
 	@Test
-	void test() {
-		MarkValidator mvobj = new MarkValidator();
-		String expectedgrade = "A";
-		String actualgrade = mvobj.markGrade(90);
-		String expectedPF = "Pass";
-		String actualPF = mvobj.isPass(90);
+	void testFor90Marks() {
+		MarkValidator markValidator = new MarkValidator();
+		String actualgrade = markValidator.markGrade(90);
+		String expectedgrade = "Grade B";
 		assertEquals(actualgrade,expectedgrade);
-		assertEquals(actualPF,expectedPF);
+		boolean actualPassFailCondition = markValidator.isPass(90);
+		boolean expectedPassFailCondition = true;
+		assertEquals(actualPassFailCondition,expectedPassFailCondition);
 	}
 	@Test
-	void test2() {
-		MarkValidator mvobj = new MarkValidator();
-		
-		String expectedgrade = "Please enter valid marks";
-		String actualgrade = mvobj.isPass(-123);
+	void testFor75Marks() {
+		MarkValidator markValidator = new MarkValidator();
+		String actualgrade = markValidator.markGrade(75);
+		String expectedgrade = "Grade C";
 		assertEquals(actualgrade,expectedgrade);
+		boolean actualPassFailCondition = markValidator.isPass(75);
+		boolean expectedPassFailCondition = true;
+		assertEquals(actualPassFailCondition,expectedPassFailCondition);
+	}
+	@Test
+	void testFor60Marks() {
+		MarkValidator markValidator = new MarkValidator();
+		String actualgrade = markValidator.markGrade(60);
+		String expectedgrade = "Grade D";
+		assertEquals(actualgrade,expectedgrade);
+		boolean actualPassFailCondition = markValidator.isPass(60);
+		boolean expectedPassFailCondition = true;
+		assertEquals(actualPassFailCondition,expectedPassFailCondition);
+	}
+	@Test
+	void testFor35Marks() {
+		MarkValidator markValidator = new MarkValidator();
+		String actualgrade = markValidator.markGrade(35);
+		String expectedgrade = "Fail";
+		assertEquals(actualgrade,expectedgrade);
+		boolean actualPassFailCondition = markValidator.isPass(35);
+		boolean expectedPassFailCondition = false;
+		assertEquals(actualPassFailCondition,expectedPassFailCondition);
+	}
+	@Test
+	void testForNegativeMarks() {
+		MarkValidator markValidator = new MarkValidator();
+		String actualgrade = markValidator.markGrade(-123);
+		String expectedgrade = "Enter Valid Marks to Calculate Grade";
+		assertEquals(actualgrade,expectedgrade);
+		boolean actualPassFailCondition = markValidator.isPass(-123);
+		boolean expectedPassFailCondition = false;
+		assertEquals(actualPassFailCondition,expectedPassFailCondition);
 		
 	}
 	@Test
-	void test3() {
-		MarkValidator mvobj = new MarkValidator();
-		String expectedgrade = "Please enter valid marks";
-		String actualgrade = mvobj.isPass(400);
+	void testForMarksGreaterThan100() {
+		MarkValidator markValidator = new MarkValidator();
+		String actualgrade = markValidator.markGrade(400);
+		String expectedgrade = "Enter Valid Marks to Calculate Grade";
 		assertEquals(actualgrade,expectedgrade);
-		
+		boolean actualPassFailCondition = markValidator.isPass(400);
+		boolean expectedPassFailCondition = true;
+		assertEquals(actualPassFailCondition,expectedPassFailCondition);	
 	}
 
 
